@@ -1,0 +1,19 @@
+﻿  NetConnect.cpp
+  Aimbot.cpp
+  BO3.cpp
+  XEX.cpp
+  INIReader.cpp
+  liveblock.cpp
+  ScnPreferences.cpp
+  ScnTab5.cpp
+  HudHook.cpp
+  ScnGuideInfo.cpp
+  HvPeekPoke.cpp
+  KeyVault.cpp
+  NetReq.cpp
+  SysHooks.cpp
+  GameHooks.cpp
+  Utilities.cpp
+     Creating library C:\Program Files (x86)\Nimbus\stealth sources\OutHereLive\source - listener, panel, server\XEX\Release_LTCG\XEX.lib and object C:\Program Files (x86)\Nimbus\stealth sources\OutHereLive\source - listener, panel, server\XEX\Release_LTCG\XEX.exp
+  Generating code
+  Finished generating code

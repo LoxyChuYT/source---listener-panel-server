@@ -1,0 +1,245 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: outherelive175.site.nfoservers.com
+-- Generation Time: Dec 18, 2018 at 04:08 AM
+-- Server version: 5.6.40
+-- PHP Version: 7.0.32-0ubuntu0.16.04.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `outherelive175_stealth`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consoles`
+--
+
+CREATE TABLE `consoles` (
+  `uid` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `cpukey` varchar(32) NOT NULL DEFAULT '0',
+  `salt` varchar(32) NOT NULL DEFAULT '0',
+  `expire` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `ip` varchar(15) NOT NULL,
+  `banned` tinyint(1) NOT NULL,
+  `kvhash` varchar(32) NOT NULL,
+  `kvtime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastonline` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `kvbanned` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `consoles`
+--
+
+INSERT INTO `consoles` (`uid`, `name`, `email`, `cpukey`, `salt`, `expire`, `enabled`, `ip`, `banned`, `kvhash`, `kvtime`, `lastonline`, `kvbanned`) VALUES
+(609, 'monster09', 'Client@OutHereLive.com', 'DE08C4AE09BCC7F1BD0F05DC23B5A97C', 'BE683360AA6238A8F9C14452C1CAF8C1', '2024-02-05 00:55:53', 1, '68.106.80.95', 0, '050357B8682952475A0D46F3D536960C', '2018-12-02 02:42:29', '2018-12-05 02:27:06', 0),
+(610, 'GoldenPants ( ADMIN)', 'Client@OutHereLive.com', '7618E56FAD3F9389CA6609044FA18825', '4F85263C0B16A4BA79173C9107D6766F', '2039-12-22 04:28:15', 1, '174.105.99.254', 0, '1C527608710B6DF6737348A9487E4F8D', '2018-12-15 20:09:41', '2018-12-15 22:20:32', 0),
+(611, 'New Client', 'Client@OutHereLive.com', '46C766A9D7D43E83172535C1A2336E55', '9FA79809349675F6F04D0769CF8D8414', '2018-12-16 05:39:18', 1, '47.150.201.3', 0, 'EE0E6EA2F9E8B2E27D5BE2B39C14E62F', '2018-11-30 03:51:42', '2018-12-16 05:53:39', 0),
+(612, 'New Client', 'Client@OutHereLive.com', '15AC94D39E9EAC0E9B76C17931D02E5C', 'AA6E4DD82A21E19D5285B0FC4F7BBB14', '2018-12-07 20:12:03', 1, '184.97.85.131', 0, '43698306A3B32598FDA40BC0E6892C23', '2018-11-29 22:00:23', '2018-12-01 05:43:06', 1),
+(613, 'New Client', 'Client@OutHereLive.com', 'DC7ECC85EC1ABE556267AA9408D28C67', '7483D12442EC2B19AED162D7A094E973', '2018-12-06 22:11:48', 1, '', 0, '4D7B6A00E25471ABE090EC1DBEB6E212', '2018-11-29 22:04:34', '2018-11-29 22:11:52', 0),
+(614, 'New Client', 'Client@OutHereLive.com', '6CB9BE95A799304E13219331CBBF6170', 'ACA2AE8E118B780F5CC6594007FF3276', '2018-12-14 21:26:43', 1, '187.41.118.183', 0, '9D40223F4BB8ADC8B4B439B670C51FE9', '2018-12-14 21:26:42', '2018-12-14 21:27:27', 0),
+(615, 'BurningSunFlare', 'Client@OutHereLive.com', '34815C572C95627CE5B8BEE9AC2C46DC', 'AD922D35D75372B9313C16DFB067B57F', '2039-12-22 16:55:24', 1, '72.177.161.24', 0, '2E122D2652FB47C147FDA436D9AA9D4F', '2018-12-16 23:30:41', '2018-12-18 02:59:47', 0),
+(616, 'New Client', 'Client@OutHereLive.com', '1E748278AE72F996D7DC41250F5838B9', 'C10BC4B6399408F0D5B6F0A2B1B2785E', '2018-12-17 18:04:28', 1, '82.32.26.207', 0, 'E6E187B520326F1712F876FF181D6F64', '2018-12-17 18:04:27', '2018-12-17 18:04:33', 0),
+(617, 'New Client', 'Client@OutHereLive.com', '484DEAA36B38E3ECE494398B53299D36', '7D4D77F1CFB378718929C44989B8CCCF', '2018-12-13 11:57:19', 1, '', 0, '5E8C1E34DCAD8EB6067C9FB4EC4E4AC8', '2018-12-04 18:29:22', '2018-12-06 18:42:05', 0),
+(618, 'New Client', 'Client@OutHereLive.com', '0A74ADA3F82BA61196D2DE971847B3FC', 'A4B0EC431CD11CEE78D98D26ADB90EFB', '2018-12-15 10:14:34', 1, '76.181.128.135', 0, '7F4616A98E2A5B318E0AC50DBA7E68BF', '2018-12-04 06:14:43', '2018-12-15 10:17:00', 0),
+(619, 'Ovimez', 'Client@OutHereLive.com', '0F1C14A7099F9547672E56D9598120C2', '7E47DB155B8234A35CB359295832B592', '2024-12-23 21:13:34', 1, '54.39.46.137', 0, 'F4FC1BCFCED3DD82A5CE46B534B2407F', '2018-12-14 14:14:57', '2018-12-17 23:44:05', 0),
+(620, 'Nacho310', 'Client@OutHereLive.com', 'B528FF4EDE342BA29CCFC20CC16CF994', '52BD2A131CC6FB0F7282DCF8E692A17E', '2039-12-14 00:12:53', 1, '108.170.22.44', 0, '05690A0EF22A2645F037DD2152BEA5B4', '2018-12-06 23:51:51', '2018-12-07 03:56:25', 0),
+(621, 'New Client', 'Client@OutHereLive.com', '514B37991CB2E7152F8DDEA4A049D61E', '7BC572DAA561A8AD7849B09717BDD994', '2018-12-16 01:22:46', 1, '70.166.218.218', 0, '860057F0189D3CEAE4B78635A2A706AD', '2018-12-16 00:36:13', '2018-12-16 01:34:33', 0),
+(622, 'New Client', 'Client@OutHereLive.com', '1B60E3E4F7006F5D3A6B48E21BEA3F8F', 'AD1B951B6C8699F015250C02B750BFA2', '2018-12-21 18:32:51', 1, '130.43.193.59', 0, 'EA129623B47CD340E3ACCBDB2F7A2C93', '2018-12-14 14:27:34', '2018-12-14 21:10:25', 1),
+(623, 'New Client', 'Client@OutHereLive.com', 'ADF47858785AFA5542DFD8088A2A542E', 'AD26ED28C93241618485796C1BF05E8E', '2018-12-21 15:21:40', 1, '166.177.120.101', 0, 'F6CB6A0E8281A6E6E0FFB9BB288DEA99', '2018-12-14 15:25:27', '2018-12-14 15:25:37', 1),
+(624, 'comatron', 'Client@OutHereLive.com', '6622D27909623F9FC3C99C8BCDEC670E', 'FEA9C642B9C2E35392E621FCD8AD018E', '2024-12-24 01:13:59', 1, '73.88.6.137', 0, 'C8298F998FF36B92EB90CDFFB4EA9347', '2018-12-16 10:09:24', '2018-12-17 10:43:13', 0),
+(625, 'Leslie', 'Client@outhere.com', '0AF85E6BE500700AD2AF9ED76897D1DE', '601B562C0231EA332F2D042E3FA2ECB7', '2034-12-17 17:54:17', 1, '66.85.80.140', 0, 'F8348916289C7CAD3282CB42A2E39A3C', '2018-12-15 18:20:15', '2018-12-18 04:07:25', 0),
+(626, 'DrllRxllFixes', 'Client@OutHereLive.com', 'E1445B8225D3B8088FFBB70C57A769BE', 'D917C5D00542137E5F1047EF59600A12', '2034-12-24 11:36:46', 1, '174.240.138.89', 0, 'A728A4C4DC30A6C4A7D348D3FFAB250A', '2018-12-15 18:35:50', '2018-12-18 02:56:18', 0),
+(627, 'VXllXllXllXV', 'Client@OutHereLive.com', '1DA95F559F9131F0AA8A21E84FE521FD', 'FC8113814128FE6AFB2E8C55AD7D7000', '2034-12-24 18:44:53', 1, '174.240.136.140', 0, 'EB165FC38C5B54F7D7DD2CB35E813A75', '2018-12-15 18:58:51', '2018-12-17 20:03:50', 0),
+(628, 'Charles Mest', 'Client@OutHereLive.com', 'DCF15EF34B8DDE240246E1688ACF6803', 'C0A35FF21A51F65E6E1B4FA543C2F1B3', '2019-02-02 12:43:02', 1, '24.102.210.84', 0, '81D5834AAD0F3581709072404A50E382', '2018-12-17 22:58:26', '2018-12-18 01:25:42', 0),
+(629, 'New Client', 'Client@OutHereLive.com', '5CB4B543B2FC958C40E14766DD6A5A3F', '0EB111EE1D3A31DE3E9636705811B2CE', '2019-01-24 14:31:25', 1, '108.214.144.101', 0, '11B717CE264C632C6D457EA16B9112EE', '2018-12-17 21:48:15', '2018-12-18 04:07:05', 0),
+(630, 'Contact Staff', 'Client@OutHereLive.com', '38BF007E15C8A6DF16E68B06968B579C', 'EF86C2C00AFB01DACBD8AC0D2660E1AE', '2018-12-16 08:01:07', 1, '77.136.111.0', 1, 'D0BE0207381D19A25F415A1DA49C9B37', '2018-12-17 16:37:15', '2018-12-17 16:52:46', 0),
+(631, 'Contact staff', 'Client@OutHereLive.com', 'A63391D72D284AB4E19B0E6BD3E9D678', '595170C074F1518F028B0985DACFB36A', '2018-12-17 20:14:33', 1, '90.14.189.145', 1, '500A91B83C1128B34A010F1636B08166', '2018-12-16 01:33:10', '2018-12-17 20:39:41', 0),
+(632, 'TM Spunky', 'Client@OutHereLive.com', '69C3E1A251739D794560E5B1E37A5B93', 'C010F542B9852FE8229C9A38357FB0F0', '2019-03-17 17:30:04', 1, '185.103.96.147', 0, '363A89BAC6F214766D8F360E3C9E1453', '2018-12-17 17:28:40', '2018-12-17 23:55:50', 0),
+(633, 'New Client', 'Client@OutHereLive.com', 'E91A73F112E0D93224B5F8BAF0726432', '19E89DAB615BEEA45CD4A444A2B70253', '2018-12-25 04:06:49', 1, '166.173.185.232', 0, '1A03BFE42218450DFCE2DB8332607F48', '2018-12-18 04:06:50', '2018-12-18 04:07:27', 0),
+(634, 'New Client', 'Client@OutHereLive.com', '129BC6FCDA4DD4D09657FC2013FA59B8', '95A6FDFBF21E81D672C6F438AFAF368D', '2018-12-25 04:06:56', 1, '71.206.253.148', 0, 'FD44EB748649547686B8CC7462EF2399', '2018-12-18 04:06:57', '2018-12-18 04:07:33', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed`
+--
+
+CREATE TABLE `failed` (
+  `uid` int(6) NOT NULL,
+  `cpukey` varchar(32) DEFAULT NULL,
+  `ip` varchar(32) DEFAULT NULL,
+  `kvdata` blob,
+  `num` int(11) DEFAULT NULL,
+  `banned` tinyint(1) NOT NULL DEFAULT '0',
+  `name` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failedconsoles`
+--
+
+CREATE TABLE `failedconsoles` (
+  `id` int(255) NOT NULL,
+  `ip` varchar(30) NOT NULL,
+  `kvdata` blob,
+  `amount` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notify`
+--
+
+CREATE TABLE `notify` (
+  `xnotify1` varchar(32) NOT NULL,
+  `xnotify2` varchar(32) NOT NULL,
+  `messagebox` text NOT NULL,
+  `uid` int(1) NOT NULL,
+  `date` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+CREATE TABLE `registration` (
+  `Hash` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'Hash for the Registeration System',
+  `ULevel` varchar(1) CHARACTER SET armscii8 COLLATE armscii8_bin NOT NULL DEFAULT '0' COMMENT 'The user auth level'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `time` int(255) NOT NULL,
+  `generatedby` varchar(255) NOT NULL,
+  `timegenerated` date NOT NULL,
+  `used` int(11) NOT NULL,
+  `usedby` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `consoles`
+--
+ALTER TABLE `consoles`
+  ADD PRIMARY KEY (`uid`);
+
+--
+-- Indexes for table `failed`
+--
+ALTER TABLE `failed`
+  ADD PRIMARY KEY (`uid`),
+  ADD UNIQUE KEY `cpukey` (`cpukey`);
+
+--
+-- Indexes for table `failedconsoles`
+--
+ALTER TABLE `failedconsoles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`Hash`),
+  ADD UNIQUE KEY `Hash` (`Hash`);
+
+--
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `consoles`
+--
+ALTER TABLE `consoles`
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=635;
+--
+-- AUTO_INCREMENT for table `failed`
+--
+ALTER TABLE `failed`
+  MODIFY `uid` int(6) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `failedconsoles`
+--
+ALTER TABLE `failedconsoles`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1757;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

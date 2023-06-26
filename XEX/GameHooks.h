@@ -1,0 +1,22 @@
+#pragma once
+#include "stdafx.h"
+#include "SysHooks.h"
+
+VOID InitializeGameHooks(PLDR_DATA_TABLE_ENTRY ModuleHandle);
+VOID InitializeVkHooks(PLDR_DATA_TABLE_ENTRY ModuleHandle);
+
+typedef enum _XBOX_GAMES : DWORD {
+	BO3 = 0x4156091D,
+	BO2 = 0x415608C3,
+	DASHBOARD = 0xFFFE07D1,
+	FREESTYLEDASH = 0xF5D20000,
+	GHOSTS = 0x415608FC,
+	AW = 0x41560914,
+	MW3 = 0x415608CB,
+	GTAV = 0x545408A7,
+	BO1 = 0x41560855,
+	MW2 = 0x41560817,
+	MW1 = 0x415607E6,
+	WAW = 0x4156081C,
+	NOID = 0
+} XBOX_GAMES;
